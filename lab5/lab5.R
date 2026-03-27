@@ -88,18 +88,18 @@ conf_matrix_radial <- table(Predicted = pred_svm_radial, Actual = test_Y)
 conf_matrix_knn <- table(Predicted = knn_model_original, Actual = test_Y)
 
 #Performance Comparison
-cat("Model 1: SVM (Linear Kernel)\n")
+cat("Model 1: SVM - Linear \n")
 print(paste("Optimal Cost:", tune_linear$best.parameters$cost))
 print(conf_matrix_linear)
 print(calc_metrics(conf_matrix_linear))
 
-cat("Model 2: SVM (Radial Kernel)\n")
+cat("Model 2: SVM - Radial\n")
 print(paste("Optimal Cost:", tune_radial$best.parameters$cost, 
             "| Optimal Gamma:", tune_radial$best.parameters$gamma))
 print(conf_matrix_radial)
 print(calc_metrics(conf_matrix_radial))
 
-cat("Model 3: kNN (k=5)\n")
+cat("Model 3: kNN\n")
 print(conf_matrix_knn)
 print(calc_metrics(conf_matrix_knn))
 
